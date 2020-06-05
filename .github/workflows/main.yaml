@@ -14,9 +14,13 @@ jobs:
 
       - name: Glasswall Rebuild
         uses: ./ # Uses an action in the root directory
+        id: hello
         with:
           filetype: 'png'
           
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      
+      - name: Print stuff
+        run: echo ${{steps.hello.outputs.log}}
