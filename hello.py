@@ -1,10 +1,27 @@
 import sys
 
-sys.stdout.write("##[debug] Hello from python!")
-sys.stdout.write("##[debug]" + str(sys.argv[1:]))
+class Log:
+    def __init__(self):
+        self.content = ""
 
-print("##[2debug] Hello from python!")
-print("##[2debug]" + str(sys.argv[1:]))
+    def debug(self, content):
+        line = "##[debug] " + content + "\n"
+        self.content += line
 
-with open("a.txt", "w") as f:
-    f.write("##[3debug]\n##[3debug]")
+    def write_to_file(self):
+        with open("log.txt", "w") as f:
+            f.write(self.content)
+
+
+def main():
+    log = Log()
+
+    log.debug("Starting Script")
+
+    log.debug( str(sys.argv[1:]) )
+
+    log.write_to_file()
+
+
+if __name__ == "__main__":
+    main()
