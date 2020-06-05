@@ -15,14 +15,12 @@ class Log:
 
 def main():
     log = Log()
-    
+    log.debug("Starting Script")
+    ft = str(sys.argv[1:])
     print("what")
     print("another one")
 
-    log.debug("Starting Script")
-
-    log.debug( str(sys.argv[1:]) )
-
+    log.debug( ft )
     log.write_to_file()
 
 
