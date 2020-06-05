@@ -7,4 +7,4 @@ print("##[2debug] Hello from python!")
 print("##[2debug]" + str(sys.argv[1:]))
 
 with open("a.txt", "w") as f:
-    f.write("##[3debug]")
+    f.write("##[3debug]\n##[3debug]")
