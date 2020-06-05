@@ -5,7 +5,7 @@ on: [push]
 jobs:
   CI_Pipeline:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Pipeline Using Glasswall Rebuild
     steps:
       # To use this repository's private action,
       # you must check out the repository
@@ -14,9 +14,8 @@ jobs:
 
       - name: Glasswall Rebuild
         uses: ./ # Uses an action in the root directory
-        id: hello
         with:
-          who-to-greet: 'Tomas'
+          filetype: 'png'
           
       # Use the output from the `hello` step
       - name: Get the output time
