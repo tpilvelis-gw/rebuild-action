@@ -5,7 +5,7 @@ class Log:
         self.content = ""
 
     def debug(self, content):
-        line = "##[debug] " + content + "\n"
+        line = "##[debug] " + content
         self.content += line
 
     def write_to_file(self):
