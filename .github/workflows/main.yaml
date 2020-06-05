@@ -3,7 +3,7 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  CI_Pipeline:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
@@ -11,11 +11,13 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+
+      - name: Glasswall Rebuild
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Tomas'
+          
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"

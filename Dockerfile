@@ -7,7 +7,5 @@ RUN chmod +x /entrypoint.sh
 
 COPY hello.py /hello.py
 
-RUN ["python", "/hello.py"]
-
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
