@@ -13,4 +13,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.filetype }} -v ${{ GITHUB_WORKSPACE }}
+    - ${{ inputs.filetype }}
