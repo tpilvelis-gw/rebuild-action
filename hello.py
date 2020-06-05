@@ -5,7 +5,7 @@ class Log:
         self.content = ""
 
     def debug(self, content):
-        line = "##[debug] " + content + "\n"
+        line = "--[debug] " + content + "\n"
         self.content += line
 
     def write_to_file(self):
@@ -15,7 +15,7 @@ class Log:
 
 def main():
     log = Log()
-
+    print("what")
     log.debug("Starting Script")
 
     log.debug( str(sys.argv[1:]) )
