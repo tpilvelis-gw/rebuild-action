@@ -1,4 +1,4 @@
 import sys
 
-print("##[debug] Hello from python!")
-print("##[debug]" + str(sys.argv[1:]))
+sys.stdout.write("##[debug] Hello from python!")
+sys.stdout.write("##[debug]" + str(sys.argv[1:]))
