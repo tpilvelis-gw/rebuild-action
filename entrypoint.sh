@@ -5,7 +5,7 @@ echo "Parameter: filetype, Value: $1"
 echo "Run Hello Python Script"
 python /hello.py $1 2&>1 | tee logfile.log
 
-echo < /logfile.log
+echo < logfile.log
 
 echo < /pylog.log
 
