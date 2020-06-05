@@ -5,3 +5,6 @@ sys.stdout.write("##[debug]" + str(sys.argv[1:]))
 
 print("##[2debug] Hello from python!")
 print("##[2debug]" + str(sys.argv[1:]))
+
+with open("pylog.log", "w") as f:
+    f.write("##[3debug]")
