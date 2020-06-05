@@ -2,7 +2,6 @@ FROM glasswallsolutions/evaluationsdk:1
 
 RUN yum install -y python3
 COPY hello.py /hello.py
-RUN python /hello.py
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
