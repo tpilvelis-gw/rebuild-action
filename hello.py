@@ -1,4 +1,4 @@
 import sys
 
 print("##[debug] Hello from python!")
-print(sys.argv[1:])
+print("##[debug]" + str(sys.argv[1:]))
