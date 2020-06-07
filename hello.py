@@ -40,6 +40,9 @@ def main():
 
     gw_lib_dir = "/home/glasswall/"
     os.curdir = gw_lib_dir
+    items = os.listdir(gw_lib_dir)
+    Log.debug("In Directory: " + os.curdir)
+    Log.debug(str(items))
     gw = Glasswall(gw_lib_dir)
     Log.debug("Loaded GW Rebuild Library")
 
