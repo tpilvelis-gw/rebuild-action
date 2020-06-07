@@ -43,7 +43,7 @@ def main():
     items = os.listdir(gw_lib_dir)
     Log.debug("In Directory: " + os.curdir)
     Log.debug(str(items))
-    gw = Glasswall(gw_lib_dir)
+    gw = Glasswall(os.path.join( gw_lib_dir, "libglasswall.classic.so"))
     Log.debug("Loaded GW Rebuild Library")
 
     Log.debug("Ending Script")
