@@ -15,9 +15,9 @@ class Log:
 
 def main():
     log = Log()
-    log.debug("Starting Script")
+    log.debug("--[debug] Starting Script")
     ft = str(sys.argv[1:])
-    print("what")
+    print("--[debug] print")
     print("another one")
 
     log.debug( ft )
