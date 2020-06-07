@@ -1,4 +1,5 @@
 import sys
+import os
 
 class Log:
     @staticmethod
@@ -7,11 +8,19 @@ class Log:
         print(line)
 
 def main():
-    Log.debug("--[debug] Starting Script")
+    Log.debug("Starting Script")
     args = sys.argv[1:]
-    Log.debug(str(args))
+    Log.debug("Arguments: " + str(args))
 
-    Log.debug("--[debug] Ending Script")
+    volume = args[1]
+    os.curdir = volume
+    items = os.listdir(volume)
+    
+    Log.debug("In Directory: " + volume)
+    Log.debug(str(items))
+
+
+    Log.debug("Ending Script")
 
 
 
