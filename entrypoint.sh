@@ -8,9 +8,6 @@ echo "Run Hello Python Script"
 
 python /hello.py -v $GITHUB_WORKSPACE -f $1
 
-log=$(<log.txt)
-echo "::set-output name=log::$log"
-
 time=$(date)
 echo "::set-output name=time::$time"
 

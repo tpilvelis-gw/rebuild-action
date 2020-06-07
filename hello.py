@@ -1,5 +1,6 @@
 import sys
 import os
+from Glasswall import Glasswall
 
 class Log:
     @staticmethod
@@ -15,10 +16,13 @@ def main():
     volume = args[1]
     os.curdir = volume
     items = os.listdir(volume)
-    
     Log.debug("In Directory: " + volume)
     Log.debug(str(items))
 
+    gw_lib_dir = "/home/glasswall/"
+    os.curdir = gw_lib_dir
+    gw = Glasswall(gw_lib_dir)
+    Log.debug("Loaded GW Rebuild Library")
 
     Log.debug("Ending Script")
 
