@@ -1,27 +1,18 @@
 import sys
 
 class Log:
-    def __init__(self):
-        self.content = ""
-
-    def debug(self, content):
-        line = "--[debug] " + content + "\n"
-        self.content += line
-
-    def write_to_file(self):
-        with open("log.txt", "w") as f:
-            f.write(self.content)
-
+    @staticmethod
+    def debug(content):
+        line = "--[debug] " + content
+        print(line)
 
 def main():
-    log = Log()
-    log.debug("--[debug] Starting Script")
-    ft = str(sys.argv[1:])
-    print("--[debug] print")
-    print("another one")
+    Log.debug("--[debug] Starting Script")
+    args = sys.argv[1:]
+    Log.debug(str(args))
 
-    log.debug( ft )
-    log.write_to_file()
+    Log.debug("--[debug] Ending Script")
+
 
 
 if __name__ == "__main__":
