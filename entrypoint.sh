@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+echo "Entry Point Shell Shell"
+
 echo "Parameter: filetype, Value: $1"
 
 echo "Run Hello Python Script"
