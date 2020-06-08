@@ -15,4 +15,5 @@ runs:
   args:
     - ${{ inputs.filetype }}
 branding:
-  color: '#186480'
+  color: 'white'
+  icon: 'slash'
