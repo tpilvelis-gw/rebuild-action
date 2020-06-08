@@ -80,7 +80,7 @@ class Log:
         print(line)
 
     @staticmethod
-    def report(content):
+    def info(content):
         line = "--[info] " + content
         print(line)
 
@@ -108,20 +108,20 @@ def main():
     #Get files with ARG filetype
     files_to_rebuild = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames if args[3] in f]
     
-    Log.report("Files to Rebuild")
-    Log.report(str(files_to_rebuild))
+    Log.info("Files to Rebuild")
+    Log.info(str(files_to_rebuild))
 
     report1_h = "File"
     report2_h = "Status Code"
     report3_h = "Microseconds"
-    Log.report("| "+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|"+report3_h.rjust(15)+"|")
+    Log.info("| "+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|"+report3_h.rjust(15)+"|")
     for f in files_to_rebuild:
         a = datetime.datetime.now()
         protected_f = gw.GWFileProtect(f, args[3])
         b = datetime.datetime.now()
         delta = b - a
         
-        Log.report("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|" )
+        Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|" )
 
     Log.debug("Ending Script")
 
