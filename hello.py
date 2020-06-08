@@ -135,7 +135,7 @@ class Log:
     
     @staticmethod
     def warn(content):
-        line = "--[warn] " + content
+        line = "--[error] " + content
         print(line)
 
 def validate_github_volume(volume):
