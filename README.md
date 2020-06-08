@@ -3,10 +3,11 @@
 # Glasswall Rebuild GitHub Action
 ## Trust Every File
 
-</div>
 We are a file regeneration and analytics company, and a leader in the field of CDR: Content Disarm and Reconstruction.
 
+![Logo](gw_logo.png)
 
+</div>
 
 ## Motivation
 Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and others to inform repository contributers of potentially malicious files.
