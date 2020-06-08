@@ -50,7 +50,7 @@ def main():
 
 
 
-    result = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames]
+    result = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames if args[3] in f]
 
     Log.debug(str(result))
 
