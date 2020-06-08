@@ -1,21 +1,18 @@
-# Hello world docker action
+# Glasswall Rebuild GitHub Action
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
-## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
-
-## Example usage
-
-uses: actions/hello-world-docker-action@v1
+## Usage
+uses: tpilvelis/rebuild-action@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  filetype: 'png'
+
+## Arguments
+Glasswall Rebuild Github Action currently supports:
+| Filetype |
+|---|
+| png |
+
+| Input  | Description | Usage |
+| :---:     |     :---:   |    :---:   |
+| `filetype`  | Extension of the files to scan in the repository  | Required |
