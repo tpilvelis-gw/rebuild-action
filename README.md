@@ -1,6 +1,9 @@
 <div align="center" style="text-align:center">
+  
 # Glasswall Rebuild GitHub Action
+
 </div>
+
 
 ## Motivation
 Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and others to inform repository contributers of potentially malicious files.
