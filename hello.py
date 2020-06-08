@@ -126,7 +126,7 @@ class Log:
     @staticmethod
     def debug(content):
         line = "--[debug] " + content
-        print(line)
+        #print(line)
 
     @staticmethod
     def info(content):
