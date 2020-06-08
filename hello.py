@@ -113,14 +113,15 @@ def main():
 
     report1_h = "File"
     report2_h = "Status Code"
-    Log.report("|"+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|")
+    report3_h = "Microseconds"
+    Log.report("| "+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|"+report3_h.rjust(15)+"|")
     for f in files_to_rebuild:
         a = datetime.datetime.now()
         protected_f = gw.GWFileProtect(f, args[3])
         b = datetime.datetime.now()
         delta = b - a
         
-        Log.report("|"+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds) )
+        Log.report("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|" )
 
     Log.debug("Ending Script")
 
