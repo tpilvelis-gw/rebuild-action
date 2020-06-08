@@ -119,7 +119,8 @@ def main():
     report1_h = "File"
     report2_h = "Status Code"
     report3_h = "Microseconds"
-    Log.info("| "+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|"+report3_h.rjust(15)+"|")
+    report4_h = "Buffer Size Returned"
+    Log.info("| "+report1_h.ljust(50)+"|"+ report2_h.rjust(15)+"|"+report3_h.rjust(15)+"|"+report4_h.rjust(25)+"|")
     for f in files_to_rebuild:
         a = datetime.datetime.now()
         protected_f = gw.GWFileProtect(f, args[3])
@@ -129,7 +130,7 @@ def main():
         if protected_f.fileBuffer == None:
             Log.warn(f + "is None")
         
-        Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|" )
+        Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|"+ str(protected_f.fileBuffer)+"|")
 
     Log.debug("Ending Script")
 
