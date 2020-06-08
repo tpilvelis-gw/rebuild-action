@@ -120,7 +120,7 @@ def main():
         b = datetime.datetime.now()
         delta = b - a
         
-        Log.report("|"+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microsecond ) )
+        Log.report("|"+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds) )
 
     Log.debug("Ending Script")
 
