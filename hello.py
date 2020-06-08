@@ -100,6 +100,25 @@ class Glasswall:
 
         return gwReturn
 
+    def GWFileErrorMsg(self):
+        """Returns the file error message from the previous call made to Glasswall.
+
+        :return: A result with the file error message.
+        :rtype: GwStringReturnObj
+        """
+
+        # Declare the return type
+        self.gwLibrary.GWFileErrorMsg.restype = ct.POINTER(ct.c_wchar)
+
+        # Return Object
+        gwReturn = GwStringReturnObj()
+
+        # API Call
+        ct_string = self.gwLibrary.GWFileErrorMsg()
+
+        gwReturn.text = ct.wstring_at(ct_string)
+
+        return gwReturn
 
 # Glasswall Code
 
@@ -150,8 +169,9 @@ def main():
     configXMLResult = gw.GWFileConfigXML(xmlContent)
 
     if configXMLResult.returnStatus != 1:
-        print("Failed to apply the content management configuration for the following reason: " + gw.GWFileErrorMsg())
+        Log.warn("Failed to apply the content management configuration for the following reason: " + gw.GWFileErrorMsg())
         return
+    Log.debug("XML Config Loaded")
     #  GWFileConfigXML Test
 
     #Get files with ARG filetype
