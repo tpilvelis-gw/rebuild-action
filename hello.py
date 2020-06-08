@@ -80,7 +80,7 @@ class Log:
 
     @staticmethod
     def report(content):
-        line = "--[report] " + content
+        line = "--[info] " + content
         print(line)
 
 def validate_github_volume(volume):
@@ -110,10 +110,12 @@ def main():
     Log.report("Files to Rebuild")
     Log.report(str(files_to_rebuild))
 
+    report1_h = "File"
+    report2_h = "Status Code"
+    Log.report(report1_h.ljust(20)+"|"+ report2_h.rjust(12))
     for f in files_to_rebuild:
         protected_f = gw.GWFileProtect(f, args[3])
-        
-        Log.report(f +"     |     "+ str(protected_f.returnStatus))
+        Log.report(f.ljust(20)+"|"+ str(protected_f.returnStatus).rjust(12))
 
     Log.debug("Ending Script")
 
