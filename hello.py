@@ -113,7 +113,7 @@ def main():
     for f in files_to_rebuild:
         protected_f = gw.GWFileProtect(f, args[3])
         
-        Log.report(f +"     |     "+ protected_f.returnStatus)
+        Log.report(f +"     |     "+ str(protected_f.returnStatus))
 
     Log.debug("Ending Script")
 
