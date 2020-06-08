@@ -191,7 +191,7 @@ def main():
         b = datetime.datetime.now()
         delta = b - a
 
-        if protected_f.returnStatus == 1
+        if protected_f.returnStatus == 1:
             Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|"+ str(len(protected_f.fileBuffer)).rjust(25)+"|")
         else:
             Log.warn("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|"+ str(len(protected_f.fileBuffer)).rjust(25)+"|")
