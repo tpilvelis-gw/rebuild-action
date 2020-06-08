@@ -83,6 +83,11 @@ class Log:
     def info(content):
         line = "--[info] " + content
         print(line)
+    
+    @staticmethod
+    def warn(content):
+        line = "--[warn] " + content
+        print(line)
 
 def validate_github_volume(volume):
     os.curdir = volume
@@ -108,8 +113,8 @@ def main():
     #Get files with ARG filetype
     files_to_rebuild = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames if args[3] in f]
     
-    Log.info("Files to Rebuild")
-    Log.info(str(files_to_rebuild))
+    #Log.info("Files to Rebuild")
+    #Log.info(str(files_to_rebuild))
 
     report1_h = "File"
     report2_h = "Status Code"
@@ -120,6 +125,9 @@ def main():
         protected_f = gw.GWFileProtect(f, args[3])
         b = datetime.datetime.now()
         delta = b - a
+
+        if protected_f.fileBuffer == None:
+            Log.warn(f + "is None")
         
         Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|" )
 
