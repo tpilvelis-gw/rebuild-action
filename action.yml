@@ -16,4 +16,4 @@ runs:
     - ${{ inputs.filetype }}
 branding:
   color: 'white'
-  icon: 'fil'
+  icon: 'file-plus'
