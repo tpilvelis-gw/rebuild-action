@@ -13,6 +13,14 @@ class GwMemReturnObj:
     returnStatus = 0  # type: int
     fileBuffer = None  # type: bytearray or None
 
+class GwStatusReturnObj:
+    """A result from Glasswall containing the return status."""
+
+    def __init__(self):
+        pass
+
+    returnStatus = 0  # type: int
+
 class Glasswall:
     """A Python API wrapper around the Glasswall library."""
 
