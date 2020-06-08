@@ -1,8 +1,11 @@
 <div align="center" style="text-align:center">
   
 # Glasswall Rebuild GitHub Action
+## Trust Every File
 
 </div>
+We are a file regeneration and analytics company, and a leader in the field of CDR: Content Disarm and Reconstruction.
+
 
 
 ## Motivation
@@ -14,10 +17,6 @@ with:
   filetype: 'png'
 
 ## Arguments
-Glasswall Rebuild Github Action currently supports:
-| Filetype |
-|---|
-| png |
 
 Glasswall Rebuild GitHub Action currently supports one input from the user: `filetype`
 
