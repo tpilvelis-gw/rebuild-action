@@ -11,11 +11,6 @@ We are a file regeneration and analytics company, and a leader in the field of C
 ## Motivation
 Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and others to inform repository contributers of potentially malicious files.
 
-## Usage
-uses: tpilvelis-gw/rebuild-action@v1
-with:
-  filetype: 'png'
-
 ## Arguments
 
 Glasswall Rebuild GitHub Action currently supports one input from the user: `filetype`
