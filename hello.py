@@ -134,7 +134,7 @@ def main():
 
 
     #  GWFileConfigXML Test
-    configFile = open("config.xml", "r")
+    configFile = open("/home/glasswall/config.xml", "r")
     xmlContent = configFile.read()
     configFile.close()
 
