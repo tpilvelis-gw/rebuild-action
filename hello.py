@@ -27,16 +27,18 @@ class Log:
         line = "--[debug] " + content
         print(line)
 
+def validate_github_volume(volume):
+    os.curdir = volume
+    items = os.listdir(volume)
+    Log.debug("In Directory: " + volume)
+    Log.debug(str(items))
+
 def main():
     Log.debug("Starting Script")
     args = sys.argv[1:]
     Log.debug("Arguments: " + str(args))
 
-    volume = args[1]
-    os.curdir = volume
-    items = os.listdir(volume)
-    Log.debug("In Directory: " + volume)
-    Log.debug(str(items))
+    validate_github_volume(args[1])
 
     gw_lib_dir = "/home/glasswall/"
     os.curdir = gw_lib_dir
@@ -45,6 +47,12 @@ def main():
     Log.debug(str(items))
     gw = Glasswall(os.path.join( gw_lib_dir, "libglasswall.classic.so"))
     Log.debug("Loaded GW Rebuild Library")
+
+
+
+    result = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames]
+
+    Log.debug(str(result))
 
     Log.debug("Ending Script")
 
