@@ -129,8 +129,10 @@ def main():
 
         if protected_f.fileBuffer == None:
             Log.warn(f + "is None")
+
+        print(len(protected_f.fileBuffer))
         
-        Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|"+ str(protected_f.fileBuffer)+"|")
+        Log.info("| "+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(15)+"|" + str(delta.microseconds).rjust(15)+"|"+ str(protected_f.fileBuffer).rjust(25)+"|")
 
     Log.debug("Ending Script")
 
