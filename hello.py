@@ -71,6 +71,28 @@ class Glasswall:
 
         return gwReturn
 
+    def GWFileConfigXML(self, xmlString):
+        """Applies the given XML content management configuration to the Glasswall library.
+
+        :param str xmlString: The XML content management configuration.
+        :return: A result indicating the status of the call.
+        :rtype: GwStatusReturnObj
+        """
+
+        # API function declaration
+        self.gwLibrary.GWFileConfigXML.argtypes = [ct.c_wchar_p]
+
+        # Return Object
+        gwReturn = GwStatusReturnObj()
+
+        # API Call
+        gwReturn.returnStatus = self.gwLibrary.GWFileConfigXML(
+            ct.c_wchar_p(xmlString)
+        )
+
+        return gwReturn
+
+
 # Glasswall Code
 
 class Log:
@@ -109,6 +131,20 @@ def main():
     Log.debug(str(items))
     gw = Glasswall(os.path.join( gw_lib_dir, "libglasswall.classic.so"))
     Log.debug("Loaded GW Rebuild Library")
+
+
+    #  GWFileConfigXML Test
+    configFile = open("config.xml", "r")
+    xmlContent = configFile.read()
+    configFile.close()
+
+    # Apply the content management configuration
+    configXMLResult = gw.GWFileConfigXML(xmlContent)
+
+    if configXMLResult.returnStatus != 1:
+        print("Failed to apply the content management configuration for the following reason: " + gw.GWFileErrorMsg())
+        return
+    #  GWFileConfigXML Test
 
     #Get files with ARG filetype
     files_to_rebuild = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args[1]) for f in filenames if args[3] in f]
