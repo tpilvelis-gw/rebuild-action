@@ -1,6 +1,7 @@
 import sys
 import os
 import ctypes as ct
+import datetime
 
 # Glasswall Code
 class GwMemReturnObj:
@@ -112,10 +113,14 @@ def main():
 
     report1_h = "File"
     report2_h = "Status Code"
-    Log.report(report1_h.ljust(20)+"|"+ report2_h.rjust(12))
+    Log.report("|"+report1_h.ljust(50)+"|"+ report2_h.rjust(12)+"|")
     for f in files_to_rebuild:
+        a = datetime.datetime.now()
         protected_f = gw.GWFileProtect(f, args[3])
-        Log.report(f.ljust(20)+"|"+ str(protected_f.returnStatus).rjust(12))
+        b = datetime.datetime.now()
+        delta = b - a
+        
+        Log.report("|"+f.ljust(50)+"|"+ str(protected_f.returnStatus).rjust(12)+"|" + str(int(delta.min * 1000)) )
 
     Log.debug("Ending Script")
 
