@@ -1,6 +1,6 @@
+<div align="center" style="text-align:center">
 # Glasswall Rebuild GitHub Action
-
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+</div>
 
 ## Motivation
 Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and others to inform repository contributers of potentially malicious files.
