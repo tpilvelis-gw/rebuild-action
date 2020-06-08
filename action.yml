@@ -14,3 +14,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.filetype }}
+branding:
+  color: '#186480'
