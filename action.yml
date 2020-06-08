@@ -1,6 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Glasswall Rebuild'
+description: 'Process files in your repository using Glasswalls Rebuild Engine'
 inputs:
   filetype: #extension
     description: 'Filetypes to process'
