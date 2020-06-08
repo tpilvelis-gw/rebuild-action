@@ -10,7 +10,7 @@ We are a file regeneration and analytics company, and a leader in the field of C
 </div>
 
 ## Motivation
-Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and others to inform repository contributers of potentially malicious files.
+Open-source software is ever expanding and contributers can have malicious intentions. Glasswall Rebuild allows integration into your repository, scan through images, documents and other filetypes to inform repository owners of potentially malicious files.
 
 ## Arguments
 
@@ -40,3 +40,10 @@ jobs:
         with:
           filetype: 'png'
 ```
+
+## Output
+
+Upon use of the Glasswall Rebuild Github Action within the logs you will see a report displaying all the files with the relevant filetype and their Glasswall Rebuild processing result.
+![Output Report](img/output.png)
+
+Please refer to [Glasswall Documentation](https://docs.glasswallsolutions.com/sdk/rebuild/) in order to understand the status codes returned.
