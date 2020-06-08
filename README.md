@@ -14,7 +14,7 @@ Open-source software is ever expanding and contributers can have malicious inten
 
 ## Arguments
 
-Glasswall Rebuild GitHub Action currently supports one input from the user: `filetype`
+Glasswall Rebuild GitHub Action currently supports one input from the user: `filetype` See [Glasswall Rebuild Supported Filetypes](https://docs.glasswallsolutions.com/sdk/rebuild/Content/Product-Description/File%20Types%20Supported.htm?Highlight=supported)
 
 | Input  | Description | Usage |
 | :---:     |     :---:   |    :---:   |
