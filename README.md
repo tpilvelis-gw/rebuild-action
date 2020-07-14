@@ -47,3 +47,4 @@ Upon use of the Glasswall Rebuild Github Action within the logs you will see a r
 ![Output Report](img/output.png)
 
 Please refer to [Glasswall Documentation](https://docs.glasswallsolutions.com/sdk/rebuild/) in order to understand the status codes returned.
+
